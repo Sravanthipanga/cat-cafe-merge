@@ -4,7 +4,7 @@ A cozy merge game for iOS, Android, and the web — built with **Expo / React Na
 
 Welcome kittens to your café, merge two cats of the same tier into a rarer cat, serve customer orders, and light up the Merge Mandala — all the way to the **Legendary Golden Neko** 🌟.
 
-**Live preview:** (to be added)
+Live preview: https://cat-cafe-merge.vercel.app/
 
 ## 🎮 How to play
 
