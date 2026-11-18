@@ -14,6 +14,7 @@ import BoardView from './src/components/BoardView';
 import CollectionTab from './src/components/CollectionTab';
 import MandalaView from './src/components/MandalaView';
 import OrdersBar from './src/components/OrdersBar';
+import VercelAnalytics from './src/components/VercelAnalytics';
 import { MAX_ENERGY } from './src/game/state';
 import { useGame } from './src/hooks/useGame';
 
@@ -37,6 +38,7 @@ export default function App() {
   return (
     <SafeAreaView style={styles.safe}>
       <StatusBar style="dark" />
+      <VercelAnalytics />
       <View style={styles.header}>
         <Text style={styles.title}>🐱 Cat Café Merge ☕</Text>
         {state && (
