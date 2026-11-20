@@ -4,7 +4,7 @@
  */
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { canMerge } from '../game/board';
+import { canMerge, isBoardFull } from '../game/board';
 import {
   createInitialState,
   deserializeState,
@@ -102,7 +102,7 @@ export function useGame(): UseGame {
       if (!prev) return prev;
       const result = doSpawn(prev, Date.now());
       if (!result.ok) {
-        const full = prev.board.every((c) => c !== null);
+        const full = isBoardFull(prev.board);
         flashMessage(full ? 'The café is full! Merge or serve a cat. 🐱' : 'Not enough energy ⚡ — it refills over time.');
         return result.state;
       }
