@@ -1,6 +1,6 @@
 /**
  * Board operations for Cat Café Merge.
- * The board is a 5x4 grid (20 cells), stored as a flat array of
+ * The board is a grid of 4 columns × 5 rows (20 cells), stored as a flat array of
  * tier numbers (1..10) or null for an empty cell.
  * Pure functions — no React / React Native imports.
  */

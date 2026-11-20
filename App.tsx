@@ -15,6 +15,7 @@ import CollectionTab from './src/components/CollectionTab';
 import MandalaView from './src/components/MandalaView';
 import OrdersBar from './src/components/OrdersBar';
 import VercelAnalytics from './src/components/VercelAnalytics';
+import { isBoardFull } from './src/game/board';
 import { MAX_ENERGY } from './src/game/state';
 import { useGame } from './src/hooks/useGame';
 
@@ -34,6 +35,8 @@ export default function App() {
   const game = useGame();
   const [tab, setTab] = useState<Tab>('play');
   const { state } = game;
+  const boardFull = state !== null && isBoardFull(state.board);
+  const spawnDisabled = !state || state.energy < 1 || boardFull;
 
   return (
     <SafeAreaView style={styles.safe}>
@@ -88,11 +91,10 @@ export default function App() {
 
                 <Pressable
                   onPress={game.spawn}
-                  disabled={state.energy < 1 || state.board.every((c) => c !== null)}
+                  disabled={spawnDisabled}
                   style={({ pressed }) => [
                     styles.spawnButton,
-                    (state.energy < 1 || state.board.every((c) => c !== null)) &&
-                      styles.spawnButtonDisabled,
+                    spawnDisabled && styles.spawnButtonDisabled,
                     pressed && styles.spawnButtonPressed,
                   ]}
                   accessibilityLabel="Welcome a new kitten to the café"
