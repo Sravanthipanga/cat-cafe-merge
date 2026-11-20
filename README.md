@@ -6,6 +6,8 @@ Welcome kittens to your café, merge two cats of the same tier into a rarer cat,
 
 **▶ Play the live web preview: https://cat-cafe-merge.vercel.app/**
 
+[![CI](https://github.com/Sravanthipanga/cat-cafe-merge/actions/workflows/ci.yml/badge.svg)](https://github.com/Sravanthipanga/cat-cafe-merge/actions/workflows/ci.yml)
+
 ## 📸 Screenshots
 
 No static screenshots are checked into this repo — the fastest way to see the
